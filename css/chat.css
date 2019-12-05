@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 24px
+  }
+  
+  .topnav a:hover {
+    /* background-color: #00d0ff; */
+    color: white;
+  }
+  
+  
+  .active {
+    background-color: #00d0ff;
+    color: white;
+  }
+
+  
+  #mesages{
+    border: 2px solid black;
+    height: 450px;
+  }
+  
+  #textMessage{
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+    height: 40px;
+    border: 2px solid rgb(138, 131, 131);
+    border-radius: 5px;
+  }
