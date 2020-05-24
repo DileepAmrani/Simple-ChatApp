@@ -26,11 +26,11 @@ var database = firebase.database().ref("/")
 
 var recieverId = localStorage.getItem(`recieverID`)
 recieverId = JSON.parse(recieverId)
-console.log(recieverId)
+// console.log(recieverId)
 
 database.child(`User/${recieverId}`).on(`value`, value => {
   let reciever = value.val()
-  console.log(reciever)
+  // console.log(reciever)
 
   document.getElementById(`recieverUser`).innerHTML = `@` + reciever.userName.toLowerCase()
 
@@ -68,8 +68,8 @@ document.getElementById(`sendMessage`).addEventListener(`click`, function () {
     database.child(`User/${recieverId}/${currentuser}/Messages`).push(messageObjRec);
     yourMessage = ""
 
-    console.log(messageObj)
-    console.log(messageObjRec)
+    // console.log(messageObj)
+    // console.log(messageObjRec)
 
 
 
@@ -84,14 +84,14 @@ document.getElementById(`sendMessage`).addEventListener(`click`, function () {
 
 var currentuser = localStorage.getItem(`Current_userID`)
 currentuser = JSON.parse(currentuser)
-console.log(currentuser)
+// console.log(currentuser)
 
 
 
 database.child(`User/${currentuser}/${recieverId}/Messages`).on(`child_added`, messages => {
 
     let message = messages.val()
-    console.log(message.message)
+    // console.log(message.message)
 
     var messageDiv = document.getElementById(`mesages`)
     messageDiv.style =  `overflow: auto;`

@@ -31,7 +31,7 @@ document.getElementById(`signUp`).addEventListener(`click` , function(){
         userPassword:userPassword
     }
     
-    console.log(obj)
+    // console.log(obj)
 
 
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(
@@ -64,18 +64,18 @@ document.getElementById(`logIn`).addEventListener(`click`, function(){
     // alert(`click`)
     let userEmail1 = document.getElementById(`exampleInputEmail12`).value;
     let userPassword1 = document.getElementById(`exampleInputPassword12`).value;
-       console.log(userEmail1)
-       console.log(userPassword1)
+    //    console.log(userEmail1)
+    //    console.log(userPassword1)
 
 
     firebase.auth().signInWithEmailAndPassword(userEmail1, userPassword1 ).then(
 
 
         function(resObj){
-            console.log(resObj.user.uid)
+            // console.log(resObj.user.uid)
             database.child(`User/${resObj.user.uid}`).once('value',(value) => {
             let usersObj = value.val()
-            console.log(usersObj)
+            // console.log(usersObj)
             usersObj.id = value.key
             
             localStorage.setItem(`Current_user`,JSON.stringify(usersObj))
@@ -112,8 +112,8 @@ document.getElementById(`logIn`).addEventListener(`click`, function(){
         var errorCode = error.code;
         var errorMessage = error.message;
         alert(`Log In Un Successful`)
-        console.log(errorMessage)
-        console.log(errorCode)
+        // console.log(errorMessage)
+        // console.log(errorCode)
         // ...
     });
 })
